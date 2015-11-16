@@ -1,0 +1,1 @@
+<parse>(ROOT (S (PP (IN For) (NP (NNS years))) (NP (RB there)) (VP (VBZ has) (VP (VBN been) (NP (NP (JJ successful) (NN drone) (NN mission)) (SBAR (WHNP (WDT that)) (S (VP (VBD were) (VP (VBN completed) (PP (IN on) (NP (NNP Mars)))))))))) (. .))) </parse>
