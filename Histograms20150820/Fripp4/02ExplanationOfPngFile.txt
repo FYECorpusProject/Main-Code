@@ -1,0 +1,45 @@
+
+The '02EditDistFracDraftZdALLALL.png' shows the negative correlation of
+the edit distance metric against the bag of words metric.
+
+The x-axis is the edit distance fraction (that is, the quotient of the
+edit distance divided by the maximum value of the edit distance on a
+sentence-by-sentence basis). A dot with an x-value of 0.0 is a sentence
+that is unchanged from draft to final. A dot with an x-value of 1.0
+is a pair of sentences (one each from draft and final) that have been
+aligned (if we carry through the alignment completely) that are in fact
+totally different sentences.
+
+The y-axis is the bag of words comparison fraction. The fraction is the
+quotient of the sentence-by-sentence number of common significant words
+in the draft and final divided by the number of significant words in
+the draft. A dot with a y-value of 1.0 represents a sentence for which
+all the significant words in the draft also appeared in the final.
+A dot with a y-value of 0.0 represents a pair of sentence (one each
+from draft and final) that have been aligned (if we carry through the
+alignment completely) for which none of the significant words in the
+draft appear in the final.
+
+The top bar at y=1.0 comes from sentences for which the significant
+words in the draft all appeared in the final, but the final sentence
+had additional words, or the same words in a different order (hence
+the positive edit distance).
+The bottom bar at y=0.0 comes from sentences for which no significant
+words in the draft appeared in the final, and the sentences were
+essentially different sentences.
+
+CONCLUSION: Because the dots are strongly in a line from (0.0, 1.0)
+down a line of slope -1 to (1.0, 0.0), we conclude that the two
+metrics provide essentially the same discriminatory value. That is,
+the use of "small edit distance fraction" as our measure of similarity
+will provide roughly the same answers as would the use of "large
+overlap of bags of significant words". 
+
+Our scan by eye revealed that edit distance fraction larger than 0.5
+and bag of words overlap less than 0.5 normally indicated that the
+putatively-aligned sentences were in fact different sentences. For this
+reason, we used these two values as a cutoff point for alignment.
+A pair of sentences with an edit distance fraction larger than 0.5,
+for example, were not aligned and were considered as inserted or as
+deleted sentences.
+ 

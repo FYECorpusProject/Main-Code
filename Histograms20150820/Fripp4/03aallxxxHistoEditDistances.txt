@@ -1,0 +1,158 @@
+Figure 03
+
+These histograms show the fraction of sentences that were aligned
+in draft and final and the edit distance change from draft to final
+measured as a percentage of the maximal edit distance.
+
+For example, the line
+      20- 23   1.1   318: *
+in the following histogram is to be read as follows. In all the
+documents, there were 318 sentences for which the edit distance of
+an aligned pair of sentences was 20% to 23% of the worst case
+edit distance.
+
+For the purposes of these histograms, we stopped aligning pairs
+of sentences if the edit distance between pairs that would have been
+aligned exceeded 50% of the worst case edit distance. 
+
+CONCLUSION: For the most part, there was little "editing" of the
+text of the paper. A very large fraction of sentences were unchanged
+from draft to final. Most of the change that did occur was the
+insertion of new sentences or the deletion of sentences from
+the draft, with the insertions being dominant.
+
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, ALL TYPES
+Input from file: zoutAdALLALLhistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS 29324
+EACH STAR REPRESENTS UP TO 327 DATA POINT(S)
+  0-  3  55.7 16347: **************************************************
+  4-  7   4.0  1167: ****
+  8- 11   2.3   674: ***
+ 12- 15   1.7   492: **
+ 16- 19   1.0   307: *
+ 20- 23   1.1   318: *
+ 24- 27   0.9   251: *
+ 28- 31   0.7   199: *
+ 32- 35   0.6   179: *
+ 36- 39   0.4   130: *
+ 40- 43   0.3    99: *
+ 44- 47   0.3    79: *
+ 48- 51   0.2    58: *
+DEL       9.0  2638: *********
+    INS  21.8  6386: ********************
+DEL+INS   2.3   688: ***
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, TYPE 1
+Input from file: zoutAdALLALLhistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS 10726
+EACH STAR REPRESENTS UP TO 124 DATA POINT(S)
+  0-  3  57.8  6199: **************************************************
+  4-  7   3.6   385: ****
+  8- 11   2.2   232: **
+ 12- 15   1.5   164: **
+ 16- 19   0.9    97: *
+ 20- 23   0.9    96: *
+ 24- 27   0.8    85: *
+ 28- 31   0.6    60: *
+ 32- 35   0.6    63: *
+ 36- 39   0.3    35: *
+ 40- 43   0.3    32: *
+ 44- 47   0.3    32: *
+ 48- 51   0.3    33: *
+DEL       9.8  1046: *********
+    INS  20.2  2167: ******************
+DEL+INS   2.6   277: ***
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, TYPE 2
+Input from file: zoutAdALLALLhistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS  6792
+EACH STAR REPRESENTS UP TO  74 DATA POINT(S)
+  0-  3  54.0  3669: **************************************************
+  4-  7   4.0   275: ****
+  8- 11   2.4   166: ***
+ 12- 15   1.9   130: **
+ 16- 19   1.2    83: **
+ 20- 23   1.3    90: **
+ 24- 27   0.8    56: *
+ 28- 31   0.8    57: *
+ 32- 35   0.7    48: *
+ 36- 39   0.5    32: *
+ 40- 43   0.4    25: *
+ 44- 47   0.3    20: *
+ 48- 51   0.1     8: *
+DEL       8.8   597: *********
+    INS  22.6  1536: *********************
+DEL+INS   2.4   161: ***
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, TYPE 3
+Input from file: zoutAdALLALLhistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS  8182
+EACH STAR REPRESENTS UP TO  94 DATA POINT(S)
+  0-  3  57.4  4697: **************************************************
+  4-  7   4.1   332: ****
+  8- 11   2.1   174: **
+ 12- 15   1.6   127: **
+ 16- 19   0.9    77: *
+ 20- 23   1.0    81: *
+ 24- 27   0.9    76: *
+ 28- 31   0.7    54: *
+ 32- 35   0.6    46: *
+ 36- 39   0.5    41: *
+ 40- 43   0.3    22: *
+ 44- 47   0.2    14: *
+ 48- 51   0.2    14: *
+DEL       6.8   558: ******
+    INS  22.8  1869: ********************
+DEL+INS   1.8   146: **
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, TYPE 4
+Input from file: zoutAdALLALLhistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS  3624
+EACH STAR REPRESENTS UP TO  36 DATA POINT(S)
+  0-  3  49.2  1782: **************************************************
+  4-  7   4.8   175: *****
+  8- 11   2.8   102: ***
+ 12- 15   2.0    71: **
+ 16- 19   1.4    50: **
+ 20- 23   1.4    51: **
+ 24- 27   0.9    34: *
+ 28- 31   0.8    28: *
+ 32- 35   0.6    22: *
+ 36- 39   0.6    22: *
+ 40- 43   0.6    20: *
+ 44- 47   0.4    13: *
+ 48- 51   0.1     3: *
+DEL      12.1   437: *************
+    INS  22.5   814: ***********************
+DEL+INS   2.9   104: ***

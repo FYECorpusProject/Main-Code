@@ -1,0 +1,27 @@
+The '01EditDistFracBagsDraftAgainstFinalZdALLALL.png' shows the correlation
+of the bag of words metric for draft sentences against final sentences, if
+we run the alignment all the way to completion.
+
+The x-axis is the quotient of the number of significant words in the
+both draft and final sentences divided by the number of significant words
+in the draft sentence.
+
+The y-axis is the quotient of the number of significant words in the
+both draft and final sentences divided by the number of significant words
+in the final sentence.
+
+The horizontal line at the top represents sentences for which all the
+significant words in both draft and final sentences also appeared in
+the draft sentence.
+
+The vertical line at the right represents sentences for which all the
+significant words in both draft and final sentences also appeared in
+the final sentence.
+
+CONCLUSION: We notice a correlation along a line of slope 1. These
+dots would represent pairs of aligned sentences for which an equal
+number of significant words were deleted from the draft sentence as
+were inserted into the final sentence. 
+
+
+

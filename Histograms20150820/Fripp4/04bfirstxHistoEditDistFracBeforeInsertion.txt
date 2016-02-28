@@ -1,0 +1,73 @@
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, ALL TYPES
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS    60
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  70.0    42: ******************************************
+  4-  7  10.0     6: ******
+  8- 11  13.3     8: ********
+ 12- 15   5.0     3: ***
+ 16- 19   1.7     1: *
+
+
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, TYPE 1 
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS    15
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  73.3    11: ***********
+  4-  7   0.0     0: 
+  8- 11  20.0     3: ***
+ 12- 15   6.7     1: *
+
+
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, TYPE 2 
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS    16
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  56.2     9: *********
+  4-  7  18.8     3: ***
+  8- 11  25.0     4: ****
+
+
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, TYPE 3 
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS    21
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  71.4    15: ***************
+  4-  7   9.5     2: **
+  8- 11   4.8     1: *
+ 12- 15   9.5     2: **
+ 16- 19   4.8     1: *
+
+
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, TYPE 4 
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS     8
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  87.5     7: *******
+  4-  7  12.5     1: *
+

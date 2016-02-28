@@ -1,0 +1,71 @@
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, ALL TYPES
+Input from file: zoutAdALLLASThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS    47
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  85.1    40: ****************************************
+  4-  7   8.5     4: ****
+  8- 11   4.3     2: **
+ 12- 15   0.0     0: 
+ 16- 19   2.1     1: *
+
+
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, TYPE 1 
+Input from file: zoutAdALLLASThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS    14
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  92.9    13: *************
+  4-  7   0.0     0: 
+  8- 11   7.1     1: *
+
+
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, TYPE 2 
+Input from file: zoutAdALLLASThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS    14
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  85.7    12: ************
+  4-  7   7.1     1: *
+  8- 11   0.0     0: 
+ 12- 15   0.0     0: 
+ 16- 19   7.1     1: *
+
+
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, TYPE 3 
+Input from file: zoutAdALLLASThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS    14
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  85.7    12: ************
+  4-  7   7.1     1: *
+  8- 11   7.1     1: *
+
+
+INSERTIONS BY EDIT DIST FRAC OF PREVIOUS SENTENCE FOR ALL DOCS, TYPE 4 
+Input from file: zoutAdALLLASThistoinput.txt
+Column 1: edit dist fracs before insertion
+Column 2: percent of total
+Column 3: raw numbers of total
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS     5
+EACH STAR REPRESENTS UP TO   1 DATA POINT(S)
+  0-  3  60.0     3: ***
+  4-  7  40.0     2: **

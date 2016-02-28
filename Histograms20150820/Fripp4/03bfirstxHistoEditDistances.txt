@@ -1,0 +1,128 @@
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, ALL TYPES
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS  1993
+EACH STAR REPRESENTS UP TO  32 DATA POINT(S)
+  0-  3  78.8  1571: **************************************************
+  4-  7   5.3   105: ****
+  8- 11   2.4    48: **
+ 12- 15   2.0    40: **
+ 16- 19   1.4    27: *
+ 20- 23   0.8    16: *
+ 24- 27   0.8    16: *
+ 28- 31   0.3     6: *
+ 32- 35   0.4     7: *
+ 36- 39   0.3     5: *
+ 40- 43   0.3     5: *
+ 44- 47   0.2     4: *
+DEL       2.9    57: **
+    INS   4.3    86: ***
+DEL+INS   1.0    19: *
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, TYPE 1 
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS   700
+EACH STAR REPRESENTS UP TO  12 DATA POINT(S)
+  0-  3  84.7   593: **************************************************
+  4-  7   3.7    26: ***
+  8- 11   1.6    11: *
+ 12- 15   1.3     9: *
+ 16- 19   0.6     4: *
+ 20- 23   0.7     5: *
+ 24- 27   0.3     2: *
+ 28- 31   0.3     2: *
+ 32- 35   0.4     3: *
+ 36- 39   0.1     1: *
+ 40- 43   0.4     3: *
+ 44- 47   0.3     2: *
+DEL       2.7    19: **
+    INS   2.9    20: **
+DEL+INS   0.9     6: *
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, TYPE 2 
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS   552
+EACH STAR REPRESENTS UP TO   9 DATA POINT(S)
+  0-  3  75.5   417: ***********************************************
+  4-  7   6.9    38: *****
+  8- 11   3.4    19: ***
+ 12- 15   2.9    16: **
+ 16- 19   1.6     9: *
+ 20- 23   0.5     3: *
+ 24- 27   0.9     5: *
+ 28- 31   0.4     2: *
+ 32- 35   0.4     2: *
+ 36- 39   0.0     0: 
+ 40- 43   0.0     0: 
+ 44- 47   0.2     1: *
+DEL       3.1    17: **
+    INS   4.2    23: ***
+DEL+INS   0.5     3: *
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, TYPE 3 
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS   491
+EACH STAR REPRESENTS UP TO   8 DATA POINT(S)
+  0-  3  77.2   379: ************************************************
+  4-  7   5.1    25: ****
+  8- 11   1.4     7: *
+ 12- 15   2.4    12: **
+ 16- 19   2.0    10: **
+ 20- 23   1.0     5: *
+ 24- 27   0.4     2: *
+ 28- 31   0.2     1: *
+ 32- 35   0.2     1: *
+ 36- 39   0.4     2: *
+ 40- 43   0.2     1: *
+DEL       2.6    13: **
+    INS   6.7    33: *****
+DEL+INS   1.2     6: *
+
+
+EDIT DISTANCE COMPARISONS FOR ALL DOCUMENTS, TYPE 4 
+Input from file: zoutAdALLFIRSThistoinput.txt
+Column 1: percent change in aligned sentences from draft to final
+Column 2: percent of sentences with that change
+Column 3: raw numbers of sentences with that change
+Column 4: the histogram
+AGGREGATE BY   4: EACH LINE IS A SPREAD OF 4 PERCENT
+TOTAL COUNT OF DATA POINTS IS   250
+EACH STAR REPRESENTS UP TO   4 DATA POINT(S)
+  0-  3  72.8   182: **********************************************
+  4-  7   6.4    16: ****
+  8- 11   4.4    11: ***
+ 12- 15   1.2     3: *
+ 16- 19   1.6     4: *
+ 20- 23   1.2     3: *
+ 24- 27   2.8     7: **
+ 28- 31   0.4     1: *
+ 32- 35   0.4     1: *
+ 36- 39   0.8     2: *
+ 40- 43   0.4     1: *
+ 44- 47   0.4     1: *
+DEL       3.2     8: **
+    INS   4.0    10: ***
+DEL+INS   1.6     4: *
+

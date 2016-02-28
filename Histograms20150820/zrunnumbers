@@ -1,0 +1,42 @@
+#zrunit Z d999 ALL
+###
+#zrunit D d000 ALL
+#zrunit D d000 FIRST
+#zrunit D d000 LAST
+#zrunit D d000 MIDDLE
+###
+#zrunit E d100 ALL
+#zrunit E d100 FIRST
+#zrunit E d100 LAST
+#zrunit E d100 MIDDLE
+###
+#zrunit G d300 ALL
+#zrunit G d300 FIRST
+#zrunit G d300 LAST
+#zrunit G d300 MIDDLE
+###
+#zrunit H d400 ALL
+#zrunit H d400 FIRST
+#zrunit H d400 LAST
+#zrunit H d400 MIDDLE
+###
+#zrunit I d500 ALL
+#zrunit I d500 FIRST
+#zrunit I d500 LAST
+#zrunit I d500 MIDDLE
+###
+#zrunit J d600 ALL
+#zrunit J d600 FIRST
+#zrunit J d600 LAST
+#zrunit J d600 MIDDLE
+###
+###
+zrunit A dALL ALL
+#zrunit A dALL FIRST
+#zrunit A dALL LAST
+#zrunit A dALL MIDDLE
+###
+#zrunit B dALL ALL
+#zrunit B dALL FIRST
+#zrunit B dALL LAST
+#zrunit B dALL MIDDLE

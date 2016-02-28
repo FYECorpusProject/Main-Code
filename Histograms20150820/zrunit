@@ -1,0 +1,103 @@
+#!/bin/bash
+#
+# arg 1 -- fileID
+# arg 2 -- whichInput to use
+# arg 3 -- whichParas to use
+#
+# The 'fileID' is the file name for the output, without
+# and suffices.
+#
+# The 'whichInput' selects which directory in 'FYECorpus'
+# to use as the directory for the input files.
+#
+# The comparison script produces an output file named
+#   'zout$(fileID)$(whichInput)$(whichParas).txt'
+# and then it greps for the 'ZORK' input for the
+# histograms, producing a file named
+#   'zout$(fileID)$(whichInput)$(whichParas)zork.txt'
+#
+if [ $# -ne 3 ]
+then
+  echo usage: fileID whichInput whichParas
+else
+  echo "fileID=X"$1"X"
+  echo "whichInput=X"$2"X"
+  echo "whichParas=X"$3"X"
+  echo "outputfile=X"zout$1$2$3.txt"X" 
+  echo "zorkfile=X"zout$1$2$3zork.txt"X"
+#  exit 1
+  if [ $2 == d999 ]
+  then
+    echo "run d999"
+    let flag=1
+  fi
+#
+  if [ $2 == d000 ]
+  then
+    echo "run d000"
+    let flag=1
+  fi
+#
+  if [ $2 == d100 ]
+  then
+    echo "run d100"
+    let flag=1
+  fi
+#
+  if [ $2 == d200 ]
+  then
+    echo "run d200"
+    let flag=1
+  fi
+#
+  if [ $2 == d300 ]
+  then
+    echo "run d300"
+    let flag=1
+  fi
+#
+  if [ $2 == d400 ]
+  then
+    echo "run d400"
+    let flag=1
+  fi
+#
+  if [ $2 == d500 ]
+  then
+    echo "run d500"
+    let flag=1
+  fi
+#
+  if [ $2 == d600 ]
+  then
+    echo "run d600"
+    let flag=1
+  fi
+#
+  if [ $2 == dALL ]
+  then
+    echo "run dALL"
+    let flag=1
+  fi
+#
+  if [ $2 == test ]
+  then
+    echo "run test"
+    let flag=1
+  fi
+#
+  if [ $((flag)) -eq 0 ]
+  then
+    echo "ERROR IN whichInput VALUE=X"$2"X"
+    exit 1
+  fi
+#
+  echo "run histocomparison"
+  python histofromcomparison.py zout$1$2$3zznew.txt zout$1$2$3zznewhistooutput.txt
+#  echo "rename scatterplots"
+#  mv EditDistFracDraft.png EditDistFracDraft$1$2$3.png
+#  mv EditDistFracFinal.png EditDistFracFinal$1$2$3.png
+#  mv EditDistFracBagsDraftAgainstFinal.png EditDistFracBagsDraftAgainstFinal$1$2$3.png
+
+fi
+
