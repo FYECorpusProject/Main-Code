@@ -1207,31 +1207,39 @@ printoutput(outstring, outfile)
 outstring = "MAIN: GET THE FILES THEMSELVES"
 printoutput(outstring, outfile)
 versions = {}
-for name in filenames:
-    if name.endswith('1.txt'):
+for longname in filenames:
+    if longname.startswith('.'): continue
+    parsedname = longname.split('_')
+    namesemester = parsedname[0]
+    namecourse = parsedname[1]
+    namesection = parsedname[2]
+    shortname = parsedname[3]
+    print('V%sV W%sW X%sX Y%sY Z%sZ' % (parsedname, namesemester, namecourse, namesection, shortname))
+
+    if shortname.endswith('1.txt'):
         nametype = 1
-    elif name.endswith('2.txt'):
+    elif shortname.endswith('2.txt'):
         nametype = 2
-    elif name.endswith('3.txt'):
+    elif shortname.endswith('3.txt'):
         nametype = 3
-    elif name.endswith('4.txt'):
+    elif shortname.endswith('4.txt'):
         nametype = 4
     else:
         print('ERROR TYPE %s\n' % (name))
         sys.exit()
-    idnumber = '%3s_%1s' % (name[0:3], nametype)
+    idnumber = '%11s_%1s' % (longname[0:11], nametype)
 
     TAG = 'MAIN: CREATECLEAN:'
-    outstring = '%s %s READ FILE: %s' % (TAG, idnumber, pathtodata+'/'+name)
+    outstring = '%s %s READ FILE: %s' % (TAG, idnumber, pathtodata+'/'+longname)
     printoutput(outstring, outfile)
 
-    doc = nltk.corpus.PlaintextCorpusReader(pathtodata, name, \
+    doc = nltk.corpus.PlaintextCorpusReader(pathtodata, longname, \
                                             encoding = 'ISO-8859-2')
     
-    outstring = '%s %s %s CORPUS PARAS: %3d' % (TAG, idnumber, name, \
+    outstring = '%s %s %s CORPUS PARAS: %3d' % (TAG, idnumber, longname, \
                                                 len(doc.paras()))
     printoutput(outstring, outfile)
-    outstring = '%s %s %s CORPUS SENTS: %3d' % (TAG, idnumber, name, \
+    outstring = '%s %s %s CORPUS SENTS: %3d' % (TAG, idnumber, longname, \
                                                 len(doc.sents()))
     printoutput(outstring, outfile)
 
@@ -1241,15 +1249,15 @@ for name in filenames:
     # be an aligned sentence at the beginning of the document
     overallnumsent = 0
     numpara = 0
-    if 'draft' in name:
-        firstsentencedraft = Sentence(name, 'DRAFT', numpara, \
+    if 'draft' in shortname:
+        firstsentencedraft = Sentence(longname, 'DRAFT', numpara, \
                              overallnumsent, \
                              ['inserted', 'first', 'sentence'], \
                              ['inserted_VBN', 'first_JJ', 'sentence_NN'], \
                              stopwords)
         sentencelist.append(firstsentencedraft)
     else:
-        firstsentencefinal = Sentence(name, 'FINAL', numpara, \
+        firstsentencefinal = Sentence(longname, 'FINAL', numpara, \
                              overallnumsent, \
                              ['inserted', 'first', 'sentence'], \
                              ['inserted_VBN', 'first_JJ', 'sentence_NN'], \
@@ -1261,12 +1269,12 @@ for name in filenames:
     # of those sentences on to the running list of 'sentence' objects
     for numpara, para in enumerate(doc.paras()):
         outstring = '%s %s %s CORPUS PARAS SENTS: %3d %3d' % \
-                    (TAG, idnumber, name, numpara, len(para))
+                    (TAG, idnumber, longname, numpara, len(para))
         printoutput(outstring, outfile)
 
         # get the lists of lines with and without tags
         outstring = '%s %s %s TAG PARA NUM: %3d %3d' % \
-                    (TAG, idnumber, name, numpara, len(para))
+                    (TAG, idnumber, longname, numpara, len(para))
         printoutput(outstring, outfile)
         taggedlines, taggedlineswithouttags = stanfordtagpara(numpara, para)
 
@@ -1274,27 +1282,27 @@ for name in filenames:
         taggedcount = len(taggedlines)
         if taggedcount != len(taggedlineswithouttags):
             outstring = '%s %s %s ERROR TAGGED COUNTS: %3d %3d' % \
-                        (TAG, idnumber, name, taggedcount, \
+                        (TAG, idnumber, longname, taggedcount, \
                          len(taggedlineswithouttags))
             printoutput(outstring, outfile)
             sys.exit()
         else:
             outstring = '\n%s %s %s TAGGED COUNTS AGREE: %3d %3d' % \
-                        (TAG, idnumber, name, taggedcount, \
+                        (TAG, idnumber, longname, taggedcount, \
                          len(taggedlineswithouttags))
             printoutput(outstring, outfile)
 
         # now append the sentences to the running list
         for numsent, sent in enumerate(taggedlines):
             overallnumsent += 1
-            if 'draft' in name:
-                thissentence = Sentence(name, 'DRAFT', numpara, \
+            if 'draft' in shortname:
+                thissentence = Sentence(longname, 'DRAFT', numpara, \
                                         overallnumsent, \
                                         taggedlineswithouttags[numsent], \
                                         sent, \
                                         stopwords)
             else:
-                thissentence = Sentence(name, 'FINAL', numpara, \
+                thissentence = Sentence(longname, 'FINAL', numpara, \
                                         overallnumsent, \
                                         taggedlineswithouttags[numsent], \
                                         sent, \
@@ -1305,15 +1313,15 @@ for name in filenames:
     # be an aligned sentence at the very end of the document
     numpara = len(doc.paras())
     overallnumsent += 1
-    if 'draft' in name:
-        lastsentencedraft = Sentence(name, 'DRAFT', numpara-1, \
+    if 'draft' in shortname:
+        lastsentencedraft = Sentence(longname, 'DRAFT', numpara-1, \
                             overallnumsent, \
                             ['inserted', 'last', 'sentence'], \
                             ['inserted_VBN', 'last_JJ', 'sentence_NN'], \
                             stopwords)
         sentencelist.append(lastsentencedraft)
     else:
-        lastsentencefinal = Sentence(name, 'FINAL', numpara-1, \
+        lastsentencefinal = Sentence(longname, 'FINAL', numpara-1, \
                             overallnumsent, \
                             ['inserted', 'last', 'sentence'], \
                             ['inserted_VBN', 'last_JJ', 'sentence_NN'], \
@@ -1348,9 +1356,9 @@ for name in filenames:
     # the pair is [draftlistofsentences, finalistofsentences]
     theversion = []
     TAG = 'MAIN: READCLEAN:  '
-    if 'draft' in name:
+    if 'draft' in shortname:
         if idnumber in versions.keys():
-            outstring = '%s %s draft, name, number %s' % (TAG, idnumber, name)
+            outstring = '%s %s draft, name, number %s' % (TAG, idnumber, longname)
             printoutput(outstring, outfile)
             theversion = versions[idnumber]
             theversion[DRAFT] = sentencelist
@@ -1358,22 +1366,22 @@ for name in filenames:
 
 #           remember the sentence count is bogus high by two for dummy sents
             outstring = '%s %s DRAFTWORDSSENTSA: %s %d\n' % \
-                        (TAG, idnumber, name, len(sentencelist)-2)
+                        (TAG, idnumber, longname, len(sentencelist)-2)
             printoutput(outstring, outfile)
         else:
-            outstring = '%s %s draft, not name, number %s' % (TAG, idnumber, name)
+            outstring = '%s %s draft, not name, number %s' % (TAG,idnumber,longname)
             printoutput(outstring, outfile)
             theversion = [sentencelist, 'dummy']
             versions[idnumber] = theversion
 
 #           remember the sentence count is bogus high by two for dummy sents
             outstring = '%s %s DRAFTWORDSSENTSB: %s %d\n' % \
-                        (TAG, idnumber, name, len(sentencelist)-2)
+                        (TAG, idnumber, longname, len(sentencelist)-2)
             printoutput(outstring, outfile)
         
     else:
         if idnumber in versions.keys():
-            outstring = '%s %s final, name, number %s' % (TAG, idnumber, name)
+            outstring = '%s %s final, name, number %s' % (TAG, idnumber, longname)
             printoutput(outstring, outfile)
             theversion = versions[idnumber]
             theversion[FINAL] = sentencelist
@@ -1381,17 +1389,17 @@ for name in filenames:
 
 #           remember the sentence count is bogus high by two for dummy sents
             outstring = '%s %s FINALWORDSSENTSA: %s %d\n' % \
-                        (TAG, idnumber, name, len(sentencelist)-2)
+                        (TAG, idnumber, longname, len(sentencelist)-2)
             printoutput(outstring, outfile)
         else:
-            outstring = '%s %s final, not name, number %s' % (TAG, idnumber, name)
+            outstring = '%s %s final, not name, number %s' % (TAG,idnumber,longname)
             printoutput(outstring, outfile)
             theversion = ['dummy', sentencelist]
             versions[idnumber] = theversion
 
 #           remember the sentence count is bogus high by two for dummy sents
-            outstring = '%s %s FINALWORDSSENTSB: %s %d %d\n' % \
-                        (TAG, idnumber, name, len(sentencelist)-2)
+            outstring = '%s %s FINALWORDSSENTSB: %s %d\n' % \
+                        (TAG, idnumber, longname, len(sentencelist)-2)
             printoutput(outstring, outfile)
 
 ## measure process and wall clock times
@@ -1405,7 +1413,7 @@ profiler = LinguisticProfiler(stopwords) # we need globals for this class
 
 for name, version in sorted(versions.items()):
     TAG = 'MAIN: NAME:'
-    outstring = '%s PROCESSING %s' % (TAG, name)
+    outstring = '%s PROCESSING %s' % (TAG, longname)
     printoutput(outstring, outfile)
 
     version1 = version[DRAFT]
@@ -1414,16 +1422,16 @@ for name, version in sorted(versions.items()):
     lastsentence1 = version1[len(version1)-1]
     lastsentence2 = version2[len(version2)-1]
     numlastpara1 = lastsentence1.getparasub()
-    numlastpara2= lastsentence2.getparasub()
+    numlastpara2 = lastsentence2.getparasub()
 
 # this may be low by one because it's subscript indexed from 0
     outstring = '%s %s ZORKPARACOUNTS     %5d %5d' % \
-                    (TAG, name, numlastpara1, numlastpara2)
+                    (TAG, longname, numlastpara1, numlastpara2)
     printoutput(outstring, outfile)
 
 #   remember the sentence count is bogus high by two for dummy sents
     outstring = '%s %s ZORKSENTENCECOUNTS %5d %5d' % \
-                (TAG, name, len(version1)-2, len(version2)-2)
+                (TAG, longname, len(version1)-2, len(version2)-2)
     printoutput(outstring, outfile)
 
     ############################################################################
@@ -1445,13 +1453,13 @@ for name, version in sorted(versions.items()):
     # we have spent some time in converting the corpus reader 'version'
     # into two lists of instances of 'sentence', so we will use those
     # lists and not the original text
-    outstring = '%s %s WE DO THE PROFILE\n' % (TAG, name)
+    outstring = '%s %s WE DO THE PROFILE\n' % (TAG, longname)
     printoutput(outstring, outfile)
 
-    profiler.doprofile(name, 'DRAFT', sents1, outfile)
-    profiler.doprofile(name, 'FINAL', sents2, outfile)
+    profiler.doprofile(longname, 'DRAFT', sents1, outfile)
+    profiler.doprofile(longname, 'FINAL', sents2, outfile)
 
-    outstring = '%s %s WE HAVE DONE THE PROFILE\n' % (TAG, name)
+    outstring = '%s %s WE HAVE DONE THE PROFILE\n' % (TAG, longname)
     printoutput(outstring, outfile)
 
     ##################################################################
@@ -1462,7 +1470,7 @@ for name, version in sorted(versions.items()):
     outerLimit = min(sentenceComparisonCount1, len(sents1))
     innerLimit = min(sentenceComparisonCount2, len(sents2))
     outstring = '%s %s WE COMPARE THE FIRST (%d, %d) SENTS (INCLUDING BOGUS)\n' % \
-                (TAG, name, outerLimit, innerLimit)
+                (TAG, longname, outerLimit, innerLimit)
     printoutput(outstring, outfile)
 
     ## measure process and wall clock times
@@ -1492,7 +1500,7 @@ for name, version in sorted(versions.items()):
     for sub1 in range(0, outerLimit):
         if 0 == sub1 % 5:
             outstring = '%s OUTER LOOP PROGRESS ... %5s' % \
-                         (name, sents1[sub1].formatsub(sub1))
+                         (longname, sents1[sub1].formatsub(sub1))
             printoutput(outstring, outfile)
         if sents1[sub1].getalignmentsub() != ALIGNMENTDUMMYSUB:
 #            outstring = 'ALREADY USED1 %d %d' % (sub1, sents2[sub1].getAlignment())
@@ -1567,7 +1575,7 @@ for name, version in sorted(versions.items()):
 #    returnedValues = printAlignmentList(label, name, matchList, outfile, \
 #                                        sents1, sents2, ALIGNMAX, BAGMIN)
 #    printAlignmentsNew(label, name, sents1, sents2, outfile)
-    alignmentStats = printAlignmentsNew2(label, name, sents1, sents2, outfile)
+    alignmentStats = printAlignmentsNew2(label, longname, sents1, sents2, outfile)
 
 #    for key, oldvalue in sorted(returnedValues.getalignmentdict().items()):
 #        outstring = 'OLDDICT1 %19s %5d' % (key, oldvalue)
@@ -1610,11 +1618,11 @@ for name, version in sorted(versions.items()):
         label = labels[level]
         midList = []
         if level >= 0:
-            midList = displayAligned(label, name, matchList, sents1, sents2, \
+            midList = displayAligned(label, longname, matchList, sents1, sents2, \
                                      level, outfile, distanceMatrix, \
                                      ALIGNMAX, BAGMIN, True)
         else:
-            midList = displayAligned(label, name, matchList, sents1, sents2, \
+            midList = displayAligned(label, longname, matchList, sents1, sents2, \
                                      level, outfile, distanceMatrix, \
                                      ALIGNMAX, BAGMIN)
         matchList = matchList + midList
@@ -1631,7 +1639,7 @@ for name, version in sorted(versions.items()):
 #                            sents1, sents2, ALIGNMAX, BAGMIN)
 #        returnedValues = printAlignmentList('AFTER '+label, name, matchList, outfile, \
 #                                             sents1, sents2, ALIGNMAX, BAGMIN)
-        alignmentStats = printAlignmentsNew2('AFTER '+label, name, \
+        alignmentStats = printAlignmentsNew2('AFTER '+label, longname, \
                                              sents1, sents2, outfile)
 
 #        for key, oldvalue in sorted(returnedValues.getalignmentdict().items()):
@@ -1660,7 +1668,7 @@ for name, version in sorted(versions.items()):
 
         breakNow = False
         if 0 == len(midList):
-            outstring = '%s ZORK_ALIGNMENT_COUNT_UNCHANGED_IN_LEVEL %d' % (name, level)
+            outstring = '%s ZORK_ALIGNMENT_COUNT_UNCHANGED_IN_LEVEL %d' % (longname, level)
             outstring += '  %4d %4d    %4d %4d' % (len(midList), len(matchList), len(sents1)-len(matchList), len(sents2)-len(matchList))
             printoutput(outstring, outfile)
             breakNow = True
@@ -1676,46 +1684,46 @@ for name, version in sorted(versions.items()):
     outstring = ''
     printoutput(outstring, outfile)
 
-    outstring = '%s ZORKEDITDISTSLEGEND ' % (name)
+    outstring = '%s ZORKEDITDISTSLEGEND ' % (longname)
     outstring += 'Frequency counts of edit dist fracs and #s of sentences '
     printoutput(outstring, outfile)
-    outstring = '%s ZORKEDITDISTSLEGEND ' % (name)
+    outstring = '%s ZORKEDITDISTSLEGEND ' % (longname)
     outstring += 'with those dists(799=del, 899=ins)'
     printoutput(outstring, outfile)
 
     alignmentDict = alignmentStats.getalignmentdict()
     for key, value in sorted(alignmentDict.items()):
-        outstring = '%s ZORKEDITDISTS %s %4d' % (name, str(key), value)
+        outstring = '%s ZORKEDITDISTS %s %4d' % (longname, str(key), value)
         printoutput(outstring, outfile)
 
     outstring = ''
     printoutput(outstring, outfile)
 
-    outstring = '%s ZORKDELETIONSLEGEND ' % (name)
+    outstring = '%s ZORKDELETIONSLEGEND ' % (longname)
     outstring += 'Number of deletions by para #'
     printoutput(outstring, outfile)
-    outstring = '%s ZORKDELETIONSLEGEND ' % (name)
+    outstring = '%s ZORKDELETIONSLEGEND ' % (longname)
     outstring += '(para_#, #_deletions)'
     printoutput(outstring, outfile)
 
     deletionsByPara = alignmentStats.getdeletionsbypara()
     for key, value in sorted(deletionsByPara.items()):
-        outstring = '%s ZORKDELETIONS %s %4d' % (name, str(key), value)
+        outstring = '%s ZORKDELETIONS %s %4d' % (longname, str(key), value)
         printoutput(outstring, outfile)
 
     outstring = ''
     printoutput(outstring, outfile)
 
-    outstring = '%s ZORKINSERTIONSLEGEND ' % (name)
+    outstring = '%s ZORKINSERTIONSLEGEND ' % (longname)
     outstring += 'Number of insertions by para #'
     printoutput(outstring, outfile)
-    outstring = '%s ZORKINSERTIONSLEGEND ' % (name)
+    outstring = '%s ZORKINSERTIONSLEGEND ' % (longname)
     outstring += '(para_#, #_insertions)'
     printoutput(outstring, outfile)
 
     insertionsByPara = alignmentStats.getinsertionsbypara()
     for key, value in sorted(insertionsByPara.items()):
-        outstring = '%s ZORKINSERTIONS %s %4d' % (name, str(key), value)
+        outstring = '%s ZORKINSERTIONS %s %4d' % (longname, str(key), value)
         printoutput(outstring, outfile)
 
     outstring = ''
@@ -1738,13 +1746,13 @@ for name, version in sorted(versions.items()):
 #    printoutput(outstring, outfile)
 
     # similarities between edit dist frac and bagsize overlap
-    outstring = '%s ZORKSIMILARITYLEGEND ' % (name)
+    outstring = '%s ZORKSIMILARITYLEGEND ' % (longname)
     outstring += 'bag_value_draft = bag_intersection/bag_draft'
     printoutput(outstring, outfile)
-    outstring = '%s ZORKSIMILARITYLEGEND ' % (name)
+    outstring = '%s ZORKSIMILARITYLEGEND ' % (longname)
     outstring += 'bag_value_final = bag_intersection/bag_final'
     printoutput(outstring, outfile)
-    outstring = '%s ZORKSIMILARITYLEGEND ' % (name)
+    outstring = '%s ZORKSIMILARITYLEGEND ' % (longname)
     outstring += '(dist/worst_case_edit)  (bag_value_draft)  (bag_value_final)'
     printoutput(outstring, outfile)
 
