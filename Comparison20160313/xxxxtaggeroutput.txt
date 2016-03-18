@@ -1,7 +1,0 @@
-Fish_NN ,_, Stanley_NNP ._.
-â_SYM $_$ How_WRB to_TO Recognize_VB a_DT Poem_NN When_WRB You_PRP See_VBP One_CD ._.
-â_SYM $_$ The_DT Carolina_NNP Reader_NNP ._.
-Plymouth_NNP ,_, MI_NNP :_: Hayden_NNP -_: McNeil_NNP ,_, 2015_CD ._.
-7_CD -_: 19_CD ._.
-Print_VB ._.
-Fall_NN 2015_CD ._.
